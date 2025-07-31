@@ -2,6 +2,7 @@
 This is a ros2 port of the original repo: https://github.com/Livox-SDK/livox_laser_simulation.
 
 Tested in ros2 foxy and humble.
+Compatible with Gazebo Fortress (gz sim 7.x) and Gazebo Garden (gz sim 8.x).
 
 In this simulation project, Livox series lidars will  publish two types of messages: 
 > livox_ros_driver2/msg/CustomMsg </br>
