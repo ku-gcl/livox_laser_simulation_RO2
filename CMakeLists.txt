@@ -35,7 +35,6 @@ include_directories(
   include
 )
 include_directories(${GAZEBO_INCLUDE_DIRS})
-include_directories(/usr/include/gazebo-11/gazebo)
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
 
@@ -49,8 +48,9 @@ install(DIRECTORY include/
 add_library(ros2_livox SHARED src/livox_points_plugin.cpp src/livox_ode_multiray_shape.cpp)
 target_link_libraries(ros2_livox ${GAZEBO_LIBRARIES} RayPlugin GpuRayPlugin)
 ament_target_dependencies(ros2_livox rclcpp std_msgs sensor_msgs geometry_msgs gazebo_dev gazebo_ros tf2_ros livox_ros_driver2 )
-target_link_libraries(ros2_livox libprotobuf.so.9)
-target_link_libraries(ros2_livox libboost_chrono.so.1.71.0)
+find_package(Protobuf REQUIRED)
+target_link_libraries(ros2_livox protobuf::libprotobuf)
+target_link_libraries(ros2_livox Boost::chrono)
 target_include_directories(ros2_livox PRIVATE include)
 
 #install(TARGETS ros2_livox DESTINATION lib/${PROJECT_NAME})

@@ -12,7 +12,7 @@
 #include <gazebo/physics/ode/ODERayShape.hh>
 #include <gazebo/physics/ode/ODEMultiRayShape.hh>
 #include "ros2_livox/livox_ode_multiray_shape.h"
-#include <ignition/math6/ignition/math.hh>
+#include <ignition/math.hh>
 
 using namespace gazebo;
 using namespace physics;
