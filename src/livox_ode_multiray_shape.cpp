@@ -2,15 +2,22 @@
 // Created by lfc on 2021/2/28.
 //
 
-#include <gazebo/common/Assert.hh>
-#include <gazebo/common/Exception.hh>
-#include <gazebo/physics/World.hh>
-#include <gazebo/physics/ode/ODETypes.hh>
-#include <gazebo/physics/ode/ODELink.hh>
-#include <gazebo/physics/ode/ODECollision.hh>
-#include <gazebo/physics/ode/ODEPhysics.hh>
-#include <gazebo/physics/ode/ODERayShape.hh>
-#include <gazebo/physics/ode/ODEMultiRayShape.hh>
+// #include <gazebo/common/Assert.hh>
+// #include <gazebo/common/Exception.hh>
+// #include <gazebo/physics/World.hh>
+// #include <gazebo/physics/ode/ODETypes.hh>
+// #include <gazebo/physics/ode/ODELink.hh>
+// #include <gazebo/physics/ode/ODECollision.hh>
+// #include <gazebo/physics/ode/ODEPhysics.hh>
+// #include <gazebo/physics/ode/ODERayShape.hh>
+// #include <gazebo/physics/ode/ODEMultiRayShape.hh>
+
+#include <gz/common5/gz/common/Util.hh>
+#include <gz/common5/gz/common/Console.hh>
+#include <gz/physics6/gz/physics/World.hh>
+#include <gz/physics6/gz/physics/Link.hh>
+#include <gz/physics6/gz/physics/Shape.hh>
+#include <gz/sensors7/gz/sensors/GpuLidarSensor.hh>
 #include "ros2_livox/livox_ode_multiray_shape.h"
 #include <ignition/math6/ignition/math.hh>
 

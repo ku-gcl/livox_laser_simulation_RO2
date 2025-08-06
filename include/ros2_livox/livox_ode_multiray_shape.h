@@ -4,13 +4,18 @@
 
 #ifndef SRC_GAZEBO_LIVOX_ODE_MULTIRAY_SHAPE_H
 #define SRC_GAZEBO_LIVOX_ODE_MULTIRAY_SHAPE_H
-#include <gazebo/physics/MultiRayShape.hh>
-#include <gazebo/util/system.hh>
-#include <gazebo/ode/common.h>
+// #include <gazebo/physics/MultiRayShape.hh>
+// #include <gazebo/util/system.hh>
+// #include <gazebo/ode/common.h>
+#include <gz/common/Console.hh>
+#include <gz/sensors/GpuLidarSensor.hh>
+#include <gz/math/Vector3.hh>
+#include <gz/sim/System.hh>
+// #include <gz/sensors/gz/sensors/GpuLidarSensor.hh>
 #include <ignition/math6/ignition/math.hh>
 
-namespace gazebo{
-namespace physics{
+namespace gz{
+namespace sim{
 class GZ_PHYSICS_VISIBLE LivoxOdeMultiRayShape : public MultiRayShape{
     /// \brief Constructor.
     /// \param[in] _parent Parent Collision.

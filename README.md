@@ -15,12 +15,42 @@ Therefore, by subscribing to the `CustomMsg` message, you can use the FAST_LIO a
 1. Clone this repo in your ros2 workspace
 
     ```
+    mkdir -p ~/ws_livox/src
+    cd ~/ws_livox/src
     git clone https://github.com/LihanChen2004/livox_laser_simulation_ros2.git
     ```
+1. Install depend
 
-2. Follow [livox_ros_driver2 Installation](https://github.com/Livox-SDK/livox_ros_driver2)
+    ```
+    sudo apt update
+    # Gazebo Sim とブリッジ用パッケージをインストール
+    sudo apt install \
+        ros-humble-ros-gz-sim \
+        ros-humble-ros-gz-bridge \
+        ros-humble-ros-gz-image
+    
+    source /opt/ros/humble/setup.bash
+    rosdep install --from-paths src --ignore-src -r -y
+    ```
+1. Follow [livox_ros_driver2 Installation](https://github.com/Livox-SDK/livox_ros_driver2)
 
-3. build your ros2 workspace (if there are warnings that do not allow the compilation, run the build again and you will see that the error disappears)
+    ```
+    cd ~/ws_livox/src
+    git clone git@github.com:Livox-SDK/Livox-SDK2.git
+    cd ./Livox-SDK2/
+    mkdir build
+    cd build
+    cmake .. && make -j
+    sudo make install
+
+
+    cd ~/ws_livox/src
+    git clone git@github.com:Livox-SDK/livox_ros_driver2.git
+    cd livox_ros_driver2
+    source /opt/ros/humble/setup.sh
+    ./build.sh humble
+    ```
+1. build your ros2 workspace (if there are warnings that do not allow the compilation, run the build again and you will see that the error disappears)
 
     ```
     colcon build && source install/setup.bash
